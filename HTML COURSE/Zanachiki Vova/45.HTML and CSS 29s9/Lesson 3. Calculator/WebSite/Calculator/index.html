@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator Template | PrepBootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+<div class="page-header">
+    <h1>Calculator <small>A responsive calculator template</small></h1>
+</div>
+
+<!-- Calculator - START -->
+<div class="container pb-calc-container">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-5">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <label>Simple Calculator</label>
+                </div>
+                <div class="panel-body pb-calc-panel-body">
+                    <input type="text" id="txtInput" class="form-control" value="0">
+
+                    <hr class="pb-calc-hr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row" style="padding-bottom: 5px;">
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn"><span class="fa fa-percent"></span></button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn"><span class="fa fa-check"></span></button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn"><span class="fa fa-superscript"></span></button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn"><span class="fa fa-arrows"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="background: #b3ffff;">
+                        <div class="col-md-12">
+                            <div class="row" style="padding-bottom: 5px;">
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn">CE</button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn">C</button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn"><span class="fa fa-arrow-circle-o-left"></span></button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn"><strong>/</strong></button>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-bottom: 5px;">
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn btn-digital">7</button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn btn-digital">8</button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn btn-digital">9</button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn"><span class="fa fa-times fa-lg"></span></button>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-bottom: 5px;">
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn btn-digital">4</button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn btn-digital">5</button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn btn-digital">6</button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn"><span class="fa fa-minus"></span></button>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-bottom: 5px;">
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn btn-digital">1</button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn btn-digital">2</button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn btn-digital">3</button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn"><span class="fa fa-plus"></span></button>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-bottom: 5px;">
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn"><span class="fa fa-calculator"></span></button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn">0</button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn">,</button>
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <button class="btn pb-calc-btn"><strong>=</strong></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .pb-calc-container {
+        font-family: Lato;
+        min-width: 300px;
+        /* max-width: 600px; */
+    }
+
+    .pb-calc-btn {
+        border: none;
+        background: none;
+        font-size: 20px;
+    }
+
+        .pb-calc-btn:hover {
+            background: blue;
+            color: white;
+        }
+
+    .pb-calc-panel-body {
+        padding-bottom: 0;
+        text-align: center;
+    }
+</style>
+
+<!-- Calculator - END -->
+
+</div>
+
+<script src="js/calculator.js"></script>
+</body>
+</html>

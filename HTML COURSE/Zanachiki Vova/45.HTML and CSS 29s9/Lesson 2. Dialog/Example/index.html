@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        window.onload=function() {
+            var btn=document.getElementById("btnShowDialogDelete");
+            var dlg=document.getElementById("dialogDelete");
+            btn.onclick=function() {
+                
+                dlg.style.display="block";
+                console.log("Клікнули на кнопку показати діалог");
+            }
+            var btnClose=document.getElementById("dialogClose");
+            btnClose.onclick=function() {
+                dlg.style.display="none";
+                console.log("Клікнули на кнопку закрити діалог");
+            }
+            console.log("Дом заватажений");
+        }
+    </script>
+</head>
+<body>
+    <a href="#" id="btnShowDialogDelete">Натисни цю кнопку</a>
+    <div class = "dialog" style="display: none;" id="dialogDelete">
+        <div class="dialog-header">
+            <div class="title">
+                Підтверження
+            </div>
+            <div class="btn-close" id="dialogClose">
+                &times;
+            </div>
+        </div>
+        <div class="content">
+            <p>
+                Видалити категорію?
+            </p>
+            <p>sdfasf</p>
+                <p>sdfasf</p>
+                <p>sdfasf</p>
+                <p>sdfasf</p>
+        </div>
+        <div class="footer">
+            <hr>
+            <div class="buttons">
+                <a href="#" class="danger">Так</a>
+                <a href="#">Ні</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

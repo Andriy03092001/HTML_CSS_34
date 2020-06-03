@@ -1,0 +1,53 @@
+﻿@{
+    //ViewBag.Title = "Home Page";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cropper example</title>
+    <link href="~/Content/cropper.min.css" rel="stylesheet" />
+    <link href="~/Content/main.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>How to Crop &amp; Upload Images</h1>
+
+        <h2>1. Select File</h2>
+        <div>
+            <input type="file" name="img_file" id="img_file" />
+            <button id="crop">Crop</button>
+        </div>
+
+        <h2>2. Crop</h2>
+        <div>
+            <canvas id="canvas">
+                Your browser does not support HTML5 Canvas
+            </canvas>
+        </div>
+
+        <h2>3. Result</h2>
+        <div id="result">
+
+        </div>
+
+        <h2>4. Upload Cropper Image</h2>
+
+        <button id="saveServer">Save to Server</button>
+
+
+        <h2>5. AspectRatio change</h2>
+
+        <button id="aspectRatioChange">Змінити пропорції</button>
+
+
+    </div>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/cropper.min.js"></script>
+    <script src="~/Scripts/scripts.js"></script>
+</body>
+</html>

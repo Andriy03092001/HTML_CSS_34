@@ -1,0 +1,17 @@
+body {
+    background-color: lightsteelblue;
+}
+
+.home-images img {
+    border: rgb(62, 160, 16) solid 5px; 
+    border-radius: 5px;
+    height: 300px;
+}
+
+a.mybtn {
+    background-color: #ff6666;
+    color: #ffffff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}

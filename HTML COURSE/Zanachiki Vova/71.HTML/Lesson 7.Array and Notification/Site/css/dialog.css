@@ -1,0 +1,102 @@
+.eclipse {
+    position: fixed;
+    background-color: rgba(38, 39, 38, 0.904);
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: 1000000;
+    transform: translate(-50%,-50%);
+}
+.eclipseProgress {
+    position: fixed;
+    background-color: rgba(246, 248, 246, 0.904);
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: 1000000;
+    transform: translate(-50%,-50%);
+}
+.progress {
+    position: fixed;
+    background-color: #00000000;
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.progress i {
+    font-size: 100px;
+}
+.dialog {
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    width: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.dialog .header {
+    background-color: #ff6666;
+    height: 55px;
+}
+.dialog .header .title {
+    float:left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 15px;
+    color: white;
+}
+.dialog .header .btn-close {
+    float: right;
+    font-size: 30px;
+    color: #cc3333;
+    font-weight: bold;
+    cursor:pointer;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.dialog .content {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #999;
+    font-size: 20px;
+    margin: 15px;
+    clear: both;
+}
+
+.dialog .footer {
+    margin-top: 25px;
+}
+.dialog .footer hr {
+    border: 1px #ececec solid;
+}
+
+.dialog .footer .buttons {
+    float: right;
+    height: 30px;
+    margin: 10px;
+}
+    .dialog .footer .buttons a {
+        border: 1px #ccc solid;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #333;
+        margin: 3px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+        .dialog .footer .buttons a.danger {
+            background-color: #ff6666;
+            color: white;
+        }
+        .dialog .footer .buttons a:hover {
+            margin: 1px;
+            padding: 7px 12px;
+        }
+.hide {
+display: none;
+}

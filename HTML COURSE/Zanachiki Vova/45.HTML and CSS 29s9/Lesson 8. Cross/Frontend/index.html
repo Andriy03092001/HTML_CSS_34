@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button id="Add" name="Add">Додати користувача</button>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#Add").on("click", AddUser);
+
+            function AddUser() {
+                console.log("Hello");
+                var email = "peter@liv.com";
+                var image = "base64";
+                $.ajax({
+                    url: 'http://localhost:12667/User/Add',
+                    type: 'POST',
+                    data: { Email: email, Image: image },
+                    success: function (dataServer) {
+                        console.log(dataServer.success);
+                    }
+                });
+            }
+            
+        });
+    </script>
+</body>
+</html>

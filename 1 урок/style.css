@@ -1,0 +1,28 @@
+body{
+    background-color: #f5f5f5;
+    font-family: 'Public Sans', sans-serif;
+}
+
+h1{
+    color: #443485;
+    text-align: center;
+}
+
+h3{
+    color: #73839a;
+}
+
+#customText{
+   font-size: 10px;
+}
+
+span{
+    padding: 10px;
+    background-color: #e0e0e0;
+    font-size: 25px;
+}
+
+.redCard{
+    color: #950000;
+}
+

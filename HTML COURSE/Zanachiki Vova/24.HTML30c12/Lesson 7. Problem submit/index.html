@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Тест submit</title>
+</head>
+<body>
+    <form>
+        <label>Напиши свій нік</label>
+        <input type="text" id="txtSlon" name="txtSlon" />
+        <button id="btnShow">Показати інфу</button>
+    </form>
+    <div id="divInva"></div>
+
+    <script>
+        window.onload = function () {
+            
+            var btn = document.getElementById("btnShow");
+            btn.onclick = function (e) {
+                e.preventDefault();
+                var infa = document.getElementById("divInva");
+                infa.innerHTML = document.getElementById("txtSlon").value;
+                //alert("Hello");
+                //return false;
+            }
+        }
+    </script>
+</body>
+</html>

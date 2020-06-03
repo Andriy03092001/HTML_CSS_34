@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>            
+        <div class="header">
+            <div class="title">
+                SymphArt
+            </div>
+            <div class="inner">
+                <div class="button">
+                    <a href="#">Home</a>
+                    <a href="#">New Article</a>
+                </div>
+            </div>
+        </div>
+        <div id="btnShowDialog">
+            <a href="#" id="showdialog">Додати студента</a>
+        </div>
+        <div class="table">
+            <table id="t01">
+                    <col width="50px" />
+                    <col width="300px" />
+                    <col width="300px" />
+                    <col width="300px" />
+                    <col width="200px" />            
+                <tr>
+                  <th>Id</th>
+                  <th>Student Name</th> 
+                  <th>Address</th>
+                  <th>Email</th>
+                  <th>Manage</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Alexander Belogorovcev</td>
+                  <td>st. Generala Bezruchka  h.9</td>
+                  <td>webaspirin@gmail.com</td>
+                  <td>
+                    <div class="tablebutton">
+                        <a href="#">EDIT</a>
+                        <a href="#">DELETE</a>
+                    </div>
+                  </td>
+                </tr>
+              </table>              
+        </div>
+        <div class="dialog" id="dialogDelete" style="display: none">
+                <div class="dialog-header">
+                        <div class="dlgtitle">
+                            ДОДАТИ СТУДЕНТА
+                        </div>                        
+                    </div>
+                    <div class="content">
+                            <input class="inp" placeholder="Full name" id="name" type="text" required /><br/>
+                            <input class="inp" placeholder="Adress" id="adress" type="text" required /><br/>
+                            <input class="inp" placeholder="Email" id="email" type="email" required /><br/>
+                    </div>
+                    <div class="footer">
+                        <hr>
+                        <div class="buttons">
+                            <!--<input class="submit" name="submit" value="ДОДАТИ" type="submit" id="add" >   -->
+                            <a href="#" id="add" class="danger">ДОДАТИ</a>
+                            <a href="#" id="dialogClose">ВІДМІНИТИ</a>
+                        </div>
+                    </div>
+        </div>
+    </div>
+</body>
+</html>

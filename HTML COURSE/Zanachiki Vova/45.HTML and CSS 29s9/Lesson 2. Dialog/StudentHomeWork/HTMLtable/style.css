@@ -1,0 +1,183 @@
+body{
+    background-color: aliceblue;
+    margin: 0;
+}
+
+
+.header
+{
+    background-color: royalblue;
+    position: absolute;
+    width: 100%;
+    height: 90px;    
+}
+
+.header .title
+{
+    color: aliceblue;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    left: 10%;
+    font-weight: bold;
+}
+
+.inner
+{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+}
+.inner .button
+{
+    display: inline-block;  
+    top: 50%;  
+}
+.inner .button a
+{
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: bold;
+    
+    margin-left: 10px;
+}
+.inner .button a:hover
+{
+    color: darkorchid;
+}
+
+#btnShowDialog
+{
+    position: fixed;
+    top: 100px;
+    left: 10px;
+    background-color: darkseagreen;
+    padding: 10px;
+    z-index: 100;
+}
+#btnShowDialog a
+{
+    color: rgb(29, 22, 107);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.table 
+{
+    position: absolute;
+    top:100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+table, th, td {
+    border-collapse: collapse;    
+}
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+td{
+    word-break: break-all;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color: #fff;
+}
+
+
+.dialog {
+    position: fixed;
+    top: 50%;
+    background-color: #ffffff;
+    width: 600px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.dialog .dialog-header {
+    background-color: darkseagreen;
+    height: 55px;
+}
+
+.dialog .dialog-header .dlgtitle {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    float: left;
+    font-size: 20px;
+    margin: 15px 15px;
+    color: white;
+}
+
+.dialog .content {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    clear: both;
+    color: #999999;
+    font-size: 20px;
+    margin: 15px;
+}
+.dialog .footer {
+    margin-top: 25px;
+}
+.dialog .footer hr {
+    border: 1px #ececec solid;
+}
+.dialog .footer .buttons {
+    float: right;
+    height: 30px;
+    margin: 10px;
+}
+.dialog .footer .buttons a {
+    border: 1px #cccccc solid;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333333;
+    margin: 3px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+
+
+.tablebutton a
+{
+    border: 1px #cccccc solid;
+    margin: 1px;
+    padding: 1px;
+    background-color: #72a2eb;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333333;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+
+.tablebutton a:hover
+{
+    background-color: #ff6666;
+}
+
+
+.dialog .footer .buttons a.danger {
+   background-color: #ff6666;
+   color: white;
+}
+.dialog .footer .buttons a:hover, .dialog .footer .buttons input:hover   {
+    margin: 1px;
+    padding: 7px 12px;
+ }
+
+ input {
+    margin-bottom: 10px;
+    font-size: 11pt;
+    padding: 15px 10px 10px;
+    border: 1px solid rgb(63, 179, 111);
+    background-color:rgb(233, 239, 241);
+    color: #787575;
+    border-radius: 5px;
+    width: 90%;
+    outline: none;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table example</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="my.js"></script>
+</head>
+
+<body>
+    <!-- <h1>Hello Peter</h1>
+    <i class="fab fa-accessible-icon fa-5x" style="font-size: 25px;"></i> -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">Користуваів бренд</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email address" name="txtEmail" id="txtEmail">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" name="txtPassword" id="txtPassword">
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fist name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="bodyListUsers">
+                <tr>
+                    <td>
+                        <input type="checkbox" data-id="1">
+                    </td>
+                    <td>Валера</td>
+                    <td>Балконський</td>
+                    <td>valik@ggg.con</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" data-id="2">
+                    </td>
+                    <td>Валера</td>
+                    <td>Забалконський</td>
+                    <td>zavalik@ggg.con</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="tablebuttons">
+            <button class="btn btn-primary" id="selectAll"><i class="far fa-check-square" style="font-size: 20px;"></i> Select All</button>
+            <button class="btn btn-primary" id="deselectAll"><i class="far fa-square" style="font-size: 20px;"></i> Deselect All</button>
+            <button class="btn btn-primary" id="addNewUser"><i class="fas fa-user-plus" style="font-size: 20px;"></i> Add new</button>
+            <button class="btn btn-primary" id="deletSelectUsers"><i class="fas fa-user-plus" style="font-size: 20px;"></i> Delete select</button>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

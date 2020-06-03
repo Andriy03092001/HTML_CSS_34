@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">    
+    <link rel="stylesheet" href="style.css">
+    <title>Lesson 4</title>
+</head>
+
+<body>
+    <!-- <h1>Hello Peter</h1>
+   <i class="fas fa-battery-full" style="font-size: 100px"></i>
+   <i class="fas fa-basketball-ball" style="font-size: 100px"></i> -->
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">Користувачі бренду</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email address" name="txtEmail" id="txtEmail">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" name="txtPassword" id="txtPassword">
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="bodyListUsers">
+                <tr>
+                    <td>
+                        <input type="checkbox" data-id="1">
+                    </td>
+                    <td>Валера</td>
+                    <td>Балканский</td>
+                    <td>valera@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" data-id="2">
+                    </td>
+                    <td>Антон</td>
+                    <td>Бакланский</td>
+                    <td>anton@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="table-buttons">
+            <button class="btn btn-primary" id="selectAll">
+                <i class="far fa-check-square"></i> Select All</button>
+            <button class="btn btn-primary" id="deSelectAll">
+                <i class="far fa-square"></i> Deselect All</button>
+            <button class="btn btn-primary" id="addUser" data-toggle="modal" data-target="#exampleModalCenter">
+                <i class="fas fa-user-plus"></i> Add User</button>
+            <button class="btn btn-danger" id="deleteUser">
+                <i class="fas fa-user-times"></i> Remove User</button>
+            <button class="btn btn-success" id="changeName" data-toggle="modal" data-target="#exampleModalCenter">
+                <i class="fas fa-user-edit"></i> Edit User</button>
+        </div>
+    </div>
+    
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="my-modal-title">Edit User</div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="my-form">
+                <div class="form-group">                  
+                  <input type="text" class="form-control" id="txtFirstName" placeholder="First Name" required>
+                </div>
+                <div class="form-group">                  
+                  <input type="text" class="form-control" id="txtLastName" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">                  
+                    <input type="email" class="form-control" id="Emailtxt" placeholder="Email" required>
+                  </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" form="my-form" class="btn btn-primary" id="btnSubmit">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="my.js"></script>
+</body>
+
+</html>

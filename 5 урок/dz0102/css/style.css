@@ -1,0 +1,293 @@
+﻿body {
+    background-color: #F1F1F1;
+    padding:0px;
+    margin:0px;
+    font-family:Calibri;
+}
+.width {
+    width: 800px;
+    margin: 0 auto;
+}
+.header {
+    background-color: #E2E2E2;
+}
+    .header .content {
+        padding: 20px 0px;
+        background-color: #50545D;
+        overflow: hidden;
+    }
+        .header .content h1 {
+            float: left;
+            margin: 0px;
+            padding:0px;
+            text-transform: uppercase;
+            color: white;
+            margin-left: 10px;
+        }
+        .header .content span {
+            color: #A8A9B3;
+        }
+        .header .content img {
+            margin-left:30px;
+            float:left;
+            height:40px;
+        }
+        .header .content p {
+            margin-right: 30px;
+            float: right;
+            height: 100%;
+            color: white;
+        }
+        .main{
+            padding-top:30px;
+            background-color:white;
+            padding-bottom:30px;
+        }
+            .main .content {
+                overflow:hidden;
+                margin-left: 30px;
+                margin-right:30px;
+            }
+            .main h2 {
+                text-transform: uppercase;
+                font-size: 26px;
+                color: #45454D;
+            }
+            .main img {
+               
+                width: 100%;
+            }
+            .main p {
+                color: #ABABAC;
+            }
+            .main a {
+                background-color: #4E4F59;
+                text-decoration:none; 
+                color:white;
+                display:inline-block;
+                padding:10px 15px;
+                font-size:20px;
+                font-weight:bolder;
+            }
+            .main .mrg {
+                margin-top: 100px;
+            }
+            .main .first {
+                float: left;
+                width: 50%;
+            }
+            .main .second
+            {
+               overflow:hidden;
+               margin-left:50%;
+            }
+            .main .fcontent
+            {
+                margin-right:20px;
+            }
+                .main .fcontent img {
+                    width: 100%;
+                }
+            .main .scontent img {
+
+                width: 100%;
+            }
+            .main .scontent {
+                margin-left: 20px;
+            }
+            .main hr {
+                margin-top: 30px;
+                border: none;
+                border-bottom: 1px #D3D3D3 solid;
+                clear:both;
+            }
+            .main .back {
+                cursor:pointer;
+                font-size: 35px;
+                color: #B5B5B5;
+                padding:60px 0px;
+                text-align: center;
+                margin-top: 30px;
+                background-color: #DFDFDF;
+            }
+            .main .pfirst {
+                margin-right: 20px;
+                width: 220px;
+                float: left;
+            }
+            .main .psecond {
+                margin-left: 20px;
+                width: 220px;
+                float: left;
+                margin-right: 20px;
+            }
+            .main .pthird {
+                margin-left: 20px;
+                float: left;
+                width: 220px;
+                overflow: hidden;
+                margin-bottom:30px;
+            }
+.footer {
+    background-color: #E2E2E2;
+}
+    .footer h2 {
+        margin: 0px;
+        padding: 20px 0px;
+        text-transform: uppercase;
+        font-size: 26px;
+        color: #45454D;
+    }
+    .footer .logo {
+        padding:0px;
+        margin:0px;
+        width:100%;
+        background-color: #F1F1F1;
+        
+    }
+    .footer .logo h2
+    {
+        margin-left:30px;
+    }
+    .footer .title {
+        overflow:hidden;
+        margin:0px;
+        padding:30px 0px;
+        background-color: #50545D;
+        padding-left:30px;
+        padding-right:30px;
+    }
+    .footer .first
+    {
+        width:60%;
+        float:left;
+        color:white;
+        font-size:19px;
+    }
+    .footer .second {
+        margin-top: 0px;
+        float: right;
+        color: white;
+        font-size: 19px;
+    }
+    .footer .title ul
+    {
+        list-style:none;
+        padding:0px;
+        margin:0px;
+    }
+        .footer .title li
+        {
+            margin-bottom:5px;
+        }
+        .footer .title hr {
+            border: none;
+            border-bottom: 1px white solid;
+            padding-top: 30px;
+            clear: both;
+        }
+    .footer h5 {
+        padding: 0px;
+        margin: 0px;
+        margin-top: 20px;
+        float: left;
+        font-size: 16px;
+        color: #7A7A84;
+    }
+    .footer h5 span
+    {
+        color:white;
+    }
+    .footer h5:last-child {
+       float:right;
+       cursor:pointer;
+    }
+    @media screen and (min-width:700px) and (max-width:900px)
+    {
+        .width
+        {
+            width:600px;
+        }
+        .main .pfirst {
+            margin-right: 0px;
+            width: 100%;
+            float: left;
+        }
+
+        .main .psecond {
+            margin-left: 0px;
+            width: 100%;
+            float: left;
+            margin-right: 0px;
+        }
+
+        .main .pthird {
+            margin-left: 0px;
+            float: left;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 0px;
+        }
+    }
+
+    
+@media screen and  (max-width:699px) {
+    .width {
+        width: 100%;
+    }
+    .main .pfirst {
+        margin-right: 0px;
+        width: 100%;
+        float: left;
+    }
+
+    .main .psecond {
+        margin-left: 0px;
+        width: 100%;
+        float: left;
+        margin-right: 0px;
+    }
+
+    .main .pthird {
+        margin-left: 0px;
+        float: left;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 0px;
+    }
+    .main .first {
+        width: 100%;
+    }
+    .main .fcontent {
+        margin-right:0px;
+    }
+        .main .scontent
+        {
+            margin-left:0px;
+        }.main .second {
+            clear: both;
+            padding-top: 20px;
+            width: 100%;
+            margin-left: 0px;
+        } 
+}
+@media screen and (max-width:600px) {
+    .header .content p
+    {
+        visibility:hidden;
+        width:0px;
+        height:0px;
+    }
+    .footer .first {
+        width: 100%;
+        float: left;
+    }
+    .footer .second {
+        margin-top:20px;
+        width: 100%;
+        float: left;
+    }
+    .main img {
+        width:100%;
+    }
+}

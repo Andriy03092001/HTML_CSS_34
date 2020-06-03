@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Використання jquery</title>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        //window.onload = function () { };
+        $(function () {
+            $("#btnClickMe").click(clickMe);
+            //console.log("Hello Peter");
+        });
+        function clickMe() {
+            alert("Hello Semen");
+        }
+    </script>
+</head>
+<body>
+    <input id="btnClickMe" name="btnClickMe" type="button" value="Нажми мене" />
+    <h1>Список користувачів</h1>
+    <table id="tableListUser">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Ім'я</th>
+                <th>Пошта</th>
+                <th>Телефон</th>
+                <th>Операція</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox" name="selectUser" value="1" />
+                </td>
+                <td>Бригадир Іван</td>
+                <td>ivandulin@gmail.com</td>
+                <td>+38(097)234 54 90</td>
+                <td>
+                    <div>
+                        <a href="#" data-del-user>Видалити</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="selectUser" value="2" />
+                </td>
+                <td>Бригадирша Оксана</td>
+                <td>oksana@gmail.com</td>
+                <td>+38(097)234 54 90</td>
+                <td>
+                    <div>
+                        <a href="#" data-del-user>Видалити</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        $(function () {
+            $("#tableListUser").on("click", "[data-del-user]", delUser);
+
+            function delUser() {
+                var item = $(this);
+                var tr = item.closest("tr");
+                var userId = tr.find("input[name=selectUser]").first().val();
+                alert("Ви натиснили кнопку видалити " + userId);
+                tr.remove();
+            }
+        });
+    </script>
+</body>
+</html>

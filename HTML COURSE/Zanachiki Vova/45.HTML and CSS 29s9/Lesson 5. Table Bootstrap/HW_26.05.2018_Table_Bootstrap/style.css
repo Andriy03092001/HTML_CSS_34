@@ -1,0 +1,13 @@
+.body-container {
+    margin-top: 50px;
+}
+
+#bodyListUsers>tr {
+    transition: 2s;
+    transition-timing-function: ease-in-out;
+    }
+
+.my-modal-title {
+    font-size: 20px;
+    float: left;
+}

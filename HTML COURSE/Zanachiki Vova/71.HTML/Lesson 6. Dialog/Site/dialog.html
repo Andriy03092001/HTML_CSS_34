@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/dialog.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div id="head-menu">
+
+    </div>
+    <button class="btn btn-danger" id="btnShowDialog">Hello</button>
+
+    <h2>
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptas id aliquam praesentium pariatur quas voluptatibus, consequuntur asperiores vero nostrum,
+        reiciendis debitis perspiciatis enim, impedit quae minus non. Repudiandae, dolore non.
+    </h2>
+    <h2>
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptas id aliquam praesentium pariatur quas voluptatibus, consequuntur asperiores vero nostrum,
+        reiciendis debitis perspiciatis enim, impedit quae minus non. Repudiandae, dolore non.
+    </h2>
+    <h2>
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptas id aliquam praesentium pariatur quas voluptatibus, consequuntur asperiores vero nostrum,
+        reiciendis debitis perspiciatis enim, impedit quae minus non. Repudiandae, dolore non.
+    </h2>
+    <h2>
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptas id aliquam praesentium pariatur quas voluptatibus, consequuntur asperiores vero nostrum,
+        reiciendis debitis perspiciatis enim, impedit quae minus non. Repudiandae, dolore non.
+    </h2>
+
+    <div class="eclipseProgress " id="dlgProgress">
+        <div class="progress">
+            <div>
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                <span class="sr-only">Loading...</span>
+            </div>
+    
+        </div>
+    </div>
+
+    <div class="eclipse hide" id="dlgAnswer">
+        <div class="dialog">
+            <div class="header">
+                <div class="title">
+                    Підтвердження операції
+                </div>
+                <div class="btn-close" data-close>
+                    &times;
+                </div>
+            </div>
+            <div class="content">
+                <p>Hello</p>
+                <p>Семен Вікторович</p>
+                <p>Семен Пилипович</p>
+                <p>Семен Вікторович</p>
+                <p>Семен Пилипович</p>
+                <p>Семен Вікторович</p>
+                <p>Семен Вікторович</p>
+                <p>Семен Вікторович</p>
+                <p>Семен Пилипович</p>
+                <p>Семен Пилипович</p>
+                <p>Семен Пилипович</p>
+            </div>
+            <div class="footer">
+                <hr />
+                <div class="buttons">
+                    <a href="#" class="danger">Так</a>
+                    <a href="#" data-close>Ні</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            let dlgAnswer = document.getElementById("dlgAnswer");
+            let btnShowDialog = document.getElementById("btnShowDialog");
+            let listBtnCloseDialog = document.querySelectorAll('[data-close]'); // All with attribute named "data-close"
+            for(let i=0;i<listBtnCloseDialog.length; i++)
+            {
+                listBtnCloseDialog[i].onclick=closeAnswerDialog;
+            }
+            btnShowDialog.onclick=function() {
+                dlgAnswer.classList.remove("hide");
+            }
+ 
+            function closeAnswerDialog() {
+                dlgAnswer.classList.add("hide");
+            }
+        });
+
+    </script>
+</body>
+
+</html>

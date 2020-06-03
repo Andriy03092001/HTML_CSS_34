@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="InputData">
+
+    </div>
+    <script>
+        window.onload = function()
+        {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET','https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=3', true);
+            xhr.send();
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState !=4)
+                    return;
+                if(xhr.status!=200)
+                    alert(xhr.status+ ": "+xhr.statusText);
+                else
+                {                    //alert(xhr.responseText);
+                    var data=JSON.parse(xhr.responseText);
+                    var str="";
+                    for(var i=0; i<Object.keys(data).length; i++)
+                    {
+                        var info="";
+                        info+='Валюта '+data[i].ccy+'<br/>';
+                        info+='У співідношені до '+data[i].base_ccy+'<br/>';
+                        info+='Курс покупки '+data[i].buy+'<br/>';
+                        info+='Курс продажу '+data[i].sale+'<br/>';
+                        info+="<hr>";
+                        str+=info;
+                    }
+                    var div=document.getElementById("InputData");
+                    div.innerHTML = str;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

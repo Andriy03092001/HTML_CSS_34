@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cropper/cropper.min.css">
+    <link rel="stylesheet" href="/css/dialog.css">
+    <style>
+        .img-preview {
+            float: left;
+            margin-bottom: .5rem;
+            margin-right: .5rem;
+            overflow: hidden;
+        }
+
+        .img-preview>img {
+            max-width: 100%;
+        }
+
+        .preview-lg {
+            height: 9rem;
+            width: 16rem;
+        }
+
+        .preview-md {
+            height: 4.5rem;
+            width: 8rem;
+        }
+
+        .preview-sm {
+            height: 2.25rem;
+            width: 4rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="head-menu">
+
+    </div>
+    <div class="container">
+        <h1>Cropper Hello Peter</h1>
+        <!--Фото по замовчувані яке виводитьсяна сайті При воборі фото воно міняється на фото, що обрали-->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"
+            id="imageView" />
+        <!--Інпут для вибору фото-->
+        <input type="file" id="fileSelectImage" />
+    </div>
+
+    <div class="dialog hide" id="dlgWorkImage">
+        <div class="header">
+            <div class="title">
+                Додати нового коритувача
+            </div>
+            <div class="btn-close dlgClose">
+                &times;
+            </div>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-md-9 col-sm-9 col-xs-8">
+                    <div>
+                        <canvas id="canvas" style="height: 400px;">
+                            Your browser does not support HTML5 Canvas
+                        </canvas>
+                    </div>
+                </div>
+                <div class="col-md-3  col-sm-3 col-xs-4">
+                    <div class="docs-preview clearfix">
+                        <div class="img-preview" style="width: 100%; height: 350px; border-radius: 50%;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+
+            <hr />
+            <button id="saveCropImage" class="btn btn-success">Обрізати</button>
+            <a href="#" class="dlgClose btn btn-danger">Скасувати</a>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+    <!-- Бібліотека кропер -->
+    <script src="/js/cropper/cropper.min.js"></script>
+    <script>
+        // Коли заванитажився дом
+        jQuery(function () {
+            // Інпут для виборку файла
+            const file = $("#fileSelectImage");
+            const dlgWorkImage = $("#dlgWorkImage");
+
+            $(dlgWorkImage).on("click", ".dlgClose", function () {
+                dlgWorkImage.hide();
+            });
+
+            let $canvas = $("#canvas"),
+                context = $canvas.get(0).getContext('2d');
+            let minWidth = 200;
+            let isCropped = false;
+
+            $("#saveCropImage").on('click', function (e) {
+                e.preventDefault();
+                var cropedImage = $canvas
+                    .cropper('getCroppedCanvas').toDataURL('image/jpg');
+                console.log('------data server------', cropedImage);
+                $("#imageView").attr('src', cropedImage);
+                // $("#Image").attr("value", cropedImage);
+
+                $(".dlgClose").click();
+                isCropped = false;
+            });
+
+            // Якщо в інпуті щось змінилося
+            file.on("change", function () {
+                //Файли, що були обрані інпутом
+                const filesSelect = this.files;
+                // Якщо хочаб один файл обрано
+                if (filesSelect && filesSelect[0]) {
+                    console.log('file select', filesSelect[0]);
+                    // Перевіряємо тип файлу, що брали
+                    if (filesSelect[0].type.match(/^image\//)) {
+                        // Спеціальний обєкт в javaScript для читання файл на клієнті
+                        let reader = new FileReader();
+                        //Якщо файл повністю прочитано
+                        reader.onload = function (e) {
+
+                            var img = new Image();
+                            img.onload = function () {
+                                if (img.width <= minWidth || img.height <= minWidth) {
+                                    alert("Обрати зображення більше 700px");
+                                    return;
+                                }
+
+                                dlgWorkImage.show();
+                                isCropped = true;
+
+                                context.canvas.width = img.width;
+                                context.canvas.height = img.height;
+                                context.drawImage(img, 0, 0);
+                                $canvas.cropper('destroy').cropper({
+                                    aspectRatio: 1 / 1,
+                                    viewMode: 1,
+                                    dragMode: 'move',
+                                    preview: '.img-preview',
+                                    crop: function (e) {
+                                        var data = e.detail;
+                                        //var h = Math.round(data.height);
+                                        var w = Math.round(data.width);
+                                        if (w <= minWidth && isCropped) {
+                                            this.cropper.setData({ width: minWidth });
+                                        }
+                                    }
+                                });
+
+                            }
+                            img.src = e.target.result;
+                            //e.target.result  - це base64 вашого файлу
+                            $("#imageView").attr('src', e.target.result);
+                        }
+                        //Починаэмо читання файлу
+                        reader.readAsDataURL(filesSelect[0]);
+                    }
+                    else {
+                        alert('Потрібно обрати зображення!');
+                    }
+                }
+                else {
+                    alert('Оберіть файл!');
+                }
+            });
+            //alert('Hello cropper');
+        });
+    </script>
+</body>
+
+</html>

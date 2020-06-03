@@ -1,0 +1,27 @@
+ol{
+    background-color: #ed9eae;
+    width: 600px;
+    padding: 20px;
+    font-size: 30px;
+    list-style-type: none;
+}
+
+li{
+    background-color: #c66376;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: white;
+    padding-left: 0px;
+}
+
+span{
+    background-color: #c66376;
+    padding: 10px 20px;
+    color: white;
+}
+
+text{
+    background-color: #9e354a;
+    padding: 10px 20px;
+}
+

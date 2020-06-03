@@ -1,0 +1,5 @@
+Підготувати матеріали по сайту
+з 
+https://www.w3schools.com/html/default.asp
+по 
+https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default

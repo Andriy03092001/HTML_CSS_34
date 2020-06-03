@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        b = 34;
+        window.onload = function () {
+            b = document.getElementsByName("txtInfo")[0].value;
+        }
+        function myHello() {
+            alert("Hello " + b);
+        }
+    </script>
+    
+</head>
+
+<body>
+    <input type="text" name="txtInfo" value="2342">
+    <p style="border: 1px solid #ffff55; cursor: pointer;" onclick="myHello()">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eligendi natus accusamus inventore, dolore ipsa corporis.
+        Dolor aperiam aliquam, ipsum sit accusamus unde amet deserunt voluptatem laudantium voluptas numquam. Voluptatum.
+    </p>
+    <button id="myBtnPluss" >
+        Pluss
+    </button>
+    <script src=" my.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+.body-container {
+    margin-top: 50px;
+}
+#bodyListUsers>tr {
+    transition: 2s;
+    transition-timing-function: ease-in-out;
+}

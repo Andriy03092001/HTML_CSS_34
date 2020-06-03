@@ -1,0 +1,27 @@
+ul{
+    list-style-type: none;
+}
+
+.menu{
+    width: 100%;
+    height: 60px;
+}
+
+
+.menu-item{
+    float: left;
+    padding: 20px;
+    background-color: gray;
+}
+
+
+.menu-item-drop{
+    display: none;
+    position: absolute;
+}
+
+
+.drop:hover .menu-item-drop{
+    display: block;
+    
+}

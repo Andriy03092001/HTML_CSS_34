@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function deleteFunction(el){
+            var myTable = document.getElementById('student-table');
+            myTable.deleteRow(el.parentElement.parentElement.parentElement.rowIndex);
+            for (let index = 1; index < myTable.rows.length; index++) {
+                myTable.rows[index].cells[0].innerHTML = myTable.rows[index].rowIndex;
+                if(myTable.rows[index].rowIndex % 2 == 0){
+                    myTable.rows[index].setAttribute("style", "background-color: rgb(235, 233, 233);");
+                }
+                else{
+                    myTable.rows[index].setAttribute("style", "background-color: white;");
+                }              
+            }
+            var entirePage = document.body.innerHTML;
+            localStorage.setItem('page', entirePage);
+        }
+        function editFunction(el){
+            var row = el.parentElement.parentElement.parentElement;
+            var dialog = document.getElementById('dlgEdit');
+            var head = document.getElementById('editDialogHead');
+            head.setAttribute("style", "background-color: rgb(69, 69, 236);");
+            dialog.style.display = 'block';
+            var btnClose = document.getElementById('editX');
+            var btnCancel = document.getElementById('editCancel');
+            var btnSubmitEdit = document.getElementById('editSubmitAdd');
+
+            btnClose.onclick = function(){                
+                dialog.style.display = 'none';
+            }
+
+            btnCancel.onclick = function(){
+                dialog.style.display = 'none';
+            }
+
+            document.getElementById('editName').value = row.cells[1].innerHTML;
+            document.getElementById('editLastName').value = row.cells[2].innerHTML;
+            document.getElementById('editEmail').value = row.cells[3].innerHTML;
+
+            btnSubmitEdit.onclick = function(){                
+                row.cells[1].innerHTML = document.getElementById('editName').value;
+                row.cells[2].innerHTML = document.getElementById('editLastName').value;
+                row.cells[3].innerHTML = document.getElementById('editEmail').value;
+                
+                dialog.style.display = 'none';
+                var entirePage = document.body.innerHTML;
+                localStorage.setItem('page', entirePage);       
+            }           
+        }        
+    </script>
+    <script>
+        window.onload = function () {
+            if(localStorage.getItem('page') != null){
+                document.body.innerHTML = localStorage.getItem('page');
+            }
+            var btnAdd = document.getElementById('button-add');
+            var btnClear = document.getElementById('button-clear');
+            var dialog = document.getElementById('dlg');
+            var btnClose = document.getElementById('X');
+            var btnCancel = document.getElementById('cancel');
+            var btnSubmitAdd = document.getElementById('submitAdd');
+
+            var myTable = document.getElementById('student-table');
+
+            btnClear.onclick = function(){
+                localStorage.removeItem('page');
+                alert('Storage Cleared');
+            }
+
+            btnAdd.onclick = function(){                
+                dialog.style.display = 'block';
+            }
+            btnClose.onclick = function(){
+                dialog.style.display = 'none';
+            }
+            btnCancel.onclick = function(){
+                dialog.style.display = 'none';
+            }
+            btnSubmitAdd.onclick = function(){
+                var row = myTable.insertRow(-1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                var cell5 = row.insertCell(4);
+                cell1.innerHTML = row.rowIndex;
+                cell2.innerHTML = document.getElementById('Name').value;
+                cell3.innerHTML = document.getElementById('LastName').value;
+                cell4.innerHTML = document.getElementById('Email').value; 
+                var manageButtons = ` <div>
+                    <div class="button-edit" onclick="editFunction(this)">
+                        Змінити
+                    </div>
+                    <div class="button-delete" onclick="deleteFunction(this)">
+                        Видалити
+                    </div>
+                </div>`;                
+               cell5.innerHTML = manageButtons;
+                
+                if(row.rowIndex % 2 == 0){
+                    row.setAttribute("style", "background-color: rgb(235, 233, 233);");
+                }
+                dialog.style.display = 'none';
+                var entirePage = document.body.innerHTML;
+                localStorage.setItem('page', entirePage);            
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="dialog" id="dlgEdit">
+            <div class="dialog-head" id="editDialogHead">
+                <div class="title">
+                        Редагування даних студента
+                </div>
+                <div class="btn-X" id="editX">
+                        &times;
+                    </div>
+            </div>        
+            <div class="content">           
+                <table class="input-area">
+                    <tr>
+                        <td>Ім'я</td>
+                        <td><input class="input-field" type="text" id="editName" required></td>
+                    </tr>
+                    <tr>
+                        <td>Прізвище</td>
+                        <td><input class="input-field" type="text" id="editLastName" required></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input class="input-field" type="text" id="editEmail" required></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="footer">
+                <div class="buttons">
+                    <div class="button-ok" id="editSubmitAdd">
+                        Зберегти
+                    </div>
+                    <div class="button-cancel" id="editCancel">
+                        Відміна
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="dialog" id="dlg">
+        <div class="dialog-head">
+            <div class="title">
+                    Додавання студента
+            </div>
+            <div class="btn-X" id="X">
+                    &times;
+                </div>
+        </div>        
+        <div class="content">           
+            <table class="input-area">
+                <tr>
+                    <td>Ім'я</td>
+                    <td><input class="input-field" type="text" id="Name" required></td>
+                </tr>
+                <tr>
+                    <td>Прізвище</td>
+                    <td><input class="input-field" type="text" id="LastName" required></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input class="input-field" type="text" id="Email" required></td>
+                </tr>
+            </table>
+        </div>
+        <div class="footer">
+            <div class="buttons">
+                <div class="button-ok" id="submitAdd">
+                    Додати
+                </div>
+                <div class="button-cancel" id="cancel">
+                    Відміна
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="header-text">
+                HomeWork 12.05.2018
+        </div>        
+        <div id="button-clear">
+            Очистити пам'ять
+        </div>
+    </div>
+    <div id="button-add">
+        Додати студента
+    </div>
+    <table id="student-table">
+        <tr class="odd">
+            <th style="width: 10%">№</th>
+            <th style="width: 20%">Ім'я</th>
+            <th style="width: 20%">Прізвище</th>
+            <th style="width: 20%">Email</th>
+            <th style="width: 30%">Керувати</th>
+        </tr>
+        <tr class="even">
+            <td>1</td>
+            <td>Ігор</td>
+            <td>Кулієв</td>
+            <td>ikuliev@gmail.com</td>
+            <td>
+                <div>
+                    <div class="button-edit" onclick="editFunction(this)">
+                        Змінити
+                    </div>
+                    <div class="button-delete" onclick="deleteFunction(this)">
+                        Видалити
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>2</td>
+            <td>Андрій</td>
+            <td>Герасимчук</td>
+            <td>ger@gmail.com</td>
+            <td>
+                <div>
+                    <div class="button-edit" onclick="editFunction(this)">
+                        Змінити
+                    </div>
+                    <div class="button-delete" onclick="deleteFunction(this)">
+                        Видалити
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>3</td>
+            <td>Вікторія</td>
+            <td>Онофрійчук</td>
+            <td>victoria@ukr.net</td>
+            <td>
+                <div>
+                    <div class="button-edit" onclick="editFunction(this)">
+                        Змінити
+                    </div>
+                    <div class="button-delete" onclick="deleteFunction(this)">
+                        Видалити
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>4</td>
+            <td>Євген</td>
+            <td>Коноплянка</td>
+            <td>konopl@gmail.com</td>
+            <td>
+                <div>
+                    <div class="button-edit" onclick="editFunction(this)">
+                        Змінити
+                    </div>
+                    <div class="button-delete" onclick="deleteFunction(this)">
+                        Видалити
+                    </div>
+                 </div>
+            </td>
+        </tr>        
+    </table>   
+</body>
+</html>

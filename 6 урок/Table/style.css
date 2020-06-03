@@ -1,0 +1,53 @@
+.myTableUsers{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+}
+
+td,th{
+    border: 2px solid black;
+    text-align: center;
+    padding: 15px;
+}
+
+th{
+    background-color: gray;
+    color: white;
+}
+
+td{
+    background-color: darkgray;
+    color: white;
+}
+
+.menu{
+    position: absolute;
+}
+
+.myBTN{
+    background-color: red;
+    color: white;
+    padding: 20px;
+    width: 100px;
+    text-align: center;
+}
+
+.myText{
+    display: none;
+}
+
+.myBTN:hover ~ .myText{
+    background-color: green;
+    display: block;
+}
+
+
+.myDIV{
+    width: 200px;
+    height: 500px;
+    background-color: red;
+    color: white;
+    padding: 20px;
+    border-radius: 20px 10px 0px 0px;
+    border:2px 0px 0px 2px solid black;
+}

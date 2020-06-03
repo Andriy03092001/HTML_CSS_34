@@ -1,0 +1,25 @@
+ul{
+    list-style-type: none;
+}
+
+span{
+    margin-right: 10px;
+}
+
+dl{
+    width: 600px;
+    color: white;
+}
+
+dt{
+    background-color: #0e494e;
+    padding: 10px;
+    padding-left: 15px;
+}
+
+dd{
+    background-color: #236167;
+    padding: 15px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+}

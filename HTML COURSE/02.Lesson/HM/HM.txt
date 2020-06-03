@@ -1,0 +1,11 @@
+1)Зробити три завдання з pdf файлу.
+Перше завдання з ЗІРОЧКОЮ (Можна зробить і без нумерації)
+
+2)Зробити сторінку з якоюсь книжкою,фільмом чи грою з schema.org
+
+Допомога з другим завданням
+https://developer.mozilla.org/uk/docs/Web/HTML/%D0%97%D0%B0%D0%B3%D0%B0%D0%BB%D1%8C%D0%BD%D1%96_%D0%B0%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D0%B8/itemscope
+https://schema.org/docs/schemas.html
+
+Тут можна протестувати як працює ваш фрагмент сайту з браузерним роботом:
+https://search.google.com/structured-data/testing-tool#
